@@ -1,0 +1,70 @@
+#####################################################################
+#                                  TP 1                             #
+#####################################################################
+
+/!\ Exécutez toutes les commandes depuis /tp1 et non depuis /code.
+
+-------------------------------------------------------------------
+Installation
+-------------------------------------------------------------------
+
+Pour installer Ruby: http://marcgg.com/classes/hetic/
+
+Pour installer l'environnement (bundler, rspec):
+
+$ cd /path/to/tp1/
+$ gem install bundler
+$ bundle install
+
+Pour tester si le setup s'est bien déroulé:
+
+$ bundle exec rspec code/test_setup_spec.rb
+
+-------------------------------------------------------------------
+Tests A Faire Passer
+-------------------------------------------------------------------
+
+Le but est de faire marcher les tests contenus dans code/exercices_tp1_spec.rb
+
+Vous aurez entièrement fini le TP quand vous verrez ceci: http://cl.ly/image/2f080D2V0x3M
+
+Pour lancer les tests, exécutez la commande suivante:
+
+$ bundle exec rspec code/exercices_tp1_spec.rb --format=documentation --color
+
+Evidemment la première fois que vous les lancerez, ils échoueront tous.
+
+Créez les fichiers d'implémentation dans tp1/code/implem/
+
+Ne modifiez aucun fichier autre que ce qui est contenu dans ce dossier, car sinon
+il est possible que vos tests ne marcheront pas sur la machine utilisée pour la correction !
+
+-------------------------------------------------------------------
+Rendu
+-------------------------------------------------------------------
+
+- Renommez le dossier "tp1_to_do" avec les noms de votre binome
+
+- Ecrivez votre code uniquement dans code/implem
+
+- Modifiez le fichier EQUIPE.txt en respectant le format "NOM / Prénom", une personne par ligne.
+
+- Compressez le dossier et mettez le sur l'intranet
+
+- Date limite de rendu: Dimanche 23h59 de la semaine du TP
+
+-------------------------------------------------------------------
+NOTATION
+-------------------------------------------------------------------
+
+- 1 point par test qui passe
+
+- Retrait de 2 points par jour de retard, 0 pour un non rendu avant le prochain cours
+
+- Retrait de 5 points pour non respect du format de rendu (EQUIPE.txt, renommage du dossier)
+
+- 0 pour les deux groupes si copie complète
+
+
+
+
