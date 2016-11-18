@@ -22,4 +22,8 @@ class Post < ApplicationRecord
 	def self.unpublish_all
 		Post.update_all(published: false)
 	end
+
+	def photos
+		photos = Photo.where(Post.ids == self.id)
+	end
 end
