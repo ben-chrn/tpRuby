@@ -1,0 +1,21 @@
+<h1>All Users</h1>
+
+<% if !@users.blank? %>
+	<% @users.each do |user| %>
+		<p><%= user.name %></p>
+	<% end %>
+<% end %>
+
+<br/>
+
+<h2>Create a new user</h2>
+
+<%= form_for @user, url: {action: "create"} do |f| %>
+	<%= f.text_field :name %>
+	<%= f.email_field :email %>
+	<%= f.submit "Create" %>
+<% end %>
+
+<% if flash[:notice] %>
+	<div class="notice"><%= flash[:notice] %></div>
+<% end %>

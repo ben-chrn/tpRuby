@@ -1,0 +1,121 @@
+#####################################################################
+#                                  TP 3                             #
+#####################################################################
+
+
+/!\ Exécutez toutes les commandes depuis /tp3
+/!\ Faites attention au format de rendu
+
+
+-------------------------------------------------------------------
+Installation
+-------------------------------------------------------------------
+
+Pour installer Ruby: http://marcgg.com/classes/hetic/
+
+Pour installer l'environnement (bundler, rspec, rails):
+
+$ cd /path/to/tp/
+$ gem install bundler
+$ bundle install
+
+Pour vérifier si l'installation s'est bien déroulée, lancez:
+
+$ bundle exec rails -v
+
+... qui devrait vous donner: "Rails 5.0.0.1"
+
+Ensuite créez votre base de données en faisant:
+
+$ bundle exec rake db:create
+
+La correction du TP2 est incluse, donc lancez les migrations:
+
+$ bundle exec rake db:migrate
+$ bundle exec rake db:migrate RAILS_ENV=test
+
+Attention ! Les tests de modèles sont toujours présent et sont
+sensés passer correctement si votre setup est valide. Vérifiez en lancant:
+
+$ bundle exec rspec spec/models/
+
+... qui devrait vous donner 20 tests qui passent.
+
+
+-------------------------------------------------------------------
+Les Tests
+-------------------------------------------------------------------
+
+Cette fois ci nous allons lancer des tests sur les controlleurs.
+
+Les fichiers sont localisés dans /spec/controllers/
+
+Pour les lancer, faites:
+
+$ bundle exec rspec spec/controllers/
+
+
+-------------------------------------------------------------------
+Utiliser l'environnement de développement
+-------------------------------------------------------------------
+
+Cette fois ci il est sans doutes plus simple de tester "à la main"
+ses vues et controlleurs. Pour cela lancez votre serveur:
+
+$ bundle exec rails server
+
+Notez bien que la base de données de l'environnement de développement
+est différente de celle de l'environnement de test et qu'il faut donc
+faire passer les migrations deux fois ! Voir le cours pour plus d'info.
+
+-------------------------------------------------------------------
+Les Migrations
+-------------------------------------------------------------------
+
+Utilisez des migrations pour créer et modifier votre base de données.
+
+Attention, vous ne pouvez pas modifier une migration une fois qu'elle
+a été exécutée (cf cours).
+
+Dans ce cas vous pouvez soit créer une migration de plus pour corriger
+votre erreur, soit détruire et recréer la base de données:
+
+$ bundle exec rake db:drop
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+$ bundle exec rake db:migrate RAILS_ENV=test
+
+Une astuce utile est d'utiliser http://sqlitebrowser.org/
+pour visualiser le contenu de la base de développement (dans db/)
+
+-------------------------------------------------------------------
+Rendu
+-------------------------------------------------------------------
+
+- Renommez le dossier téléchargé avec les noms de votre binome
+
+- Modifiez le fichier EQUIPE.txt en respectant le format "NOM / Prénom", une personne par ligne.
+
+- Compressez le dossier au format zip et mettez le sur l'intranet
+
+- Date limite de rendu: Dimanche 23h59 de la semaine du TP
+
+-------------------------------------------------------------------
+Notation
+-------------------------------------------------------------------
+
+- 1 point par test qui passe après l'exécution de:
+
+bundle exec rake db:drop
+bundle exec rake db:create
+bundle exec rake db:migrate RAILS_ENV=test
+bundle exec rspec spec/controllers
+
+C'est à dire: https://cl.ly/1s0D133p1W1c
+
+- Retrait de 2 points par jour de retard, 0 pour un non rendu avant le prochain cours
+
+- Retrait de 5 points pour non respect du format de rendu (EQUIPE.txt, renommage du dossier)
+
+- 0 pour les deux groupes si il y copie avérée
+

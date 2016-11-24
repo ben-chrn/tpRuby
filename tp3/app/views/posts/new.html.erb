@@ -1,0 +1,14 @@
+<h1>Create a new post!</h1>
+
+
+<%= form_for @post, url: {action: "new"} do |f| %>
+	<%= text_area_tag(:message, "Hi, nice site", size: "24x6") %>
+
+	<select name="select-user" id="select-user">
+		<% @users.each do |user| %>
+			<option value="<%= user.name %>"><%= user.name %></option>
+		<% end %>
+	</select>
+
+	<%= f.submit "Create post" %>
+<% end %>

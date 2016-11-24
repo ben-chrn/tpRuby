@@ -1,0 +1,8 @@
+<h1>Coucou les posts</h1>
+
+<% @posts.each do |post| %>
+	<div><p><%= post.user.name %> wrote <%=  post.message %></p></div>
+<% end %>
+
+<%= link_to "New post", new_post_path %>
+

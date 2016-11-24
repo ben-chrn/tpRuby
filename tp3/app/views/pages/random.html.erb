@@ -1,0 +1,7 @@
+<% if @times && @times != 0 %>
+	<% @times.times do |time| %>
+		<div><%= time %></div>
+	<% end %>
+<% else %>
+	<p>No valid param</p>
+<% end %>
