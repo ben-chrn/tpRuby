@@ -1,14 +1,20 @@
-<h1>Create a new post!</h1>
+<% if !@users.blank? %>
+	<h1>Create a new post!</h1>
 
+	<%= form_for @post, url: {action: "create"} do |f| %>
 
-<%= form_for @post, url: {action: "new"} do |f| %>
-	<%= text_area_tag(:message, "Hi, nice site", size: "24x6") %>
+		<%= @post.errors.full_messages.join(",") %>
 
-	<select name="select-user" id="select-user">
-		<% @users.each do |user| %>
-			<option value="<%= user.name %>"><%= user.name %></option>
-		<% end %>
-	</select>
+		<%= text_area_tag(:message, "Hi, nice site", size: "24x6") %>
 
-	<%= f.submit "Create post" %>
+		<%= select_tag "users", options_from_collection_for_select(@users, "id", "name") %>
+
+		<%= f.submit "Create post" %>
+	<% end %>
+<% else %>
+	<h1>No users present</h1>
+<% end %>
+
+<% if flash[:error] %>
+	<div class="error"><%= flash[:error] %></div>
 <% end %>

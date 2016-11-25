@@ -1,2 +1,8 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h1>Edit post <%= @post.id %></h1>
+
+<%= form_for @post, url: {action: "edit"} do |f| %>
+
+	<%= text_area_tag(:message, @post.message, size: "24x6") %>
+
+	<%= f.submit "Edit post" %>
+<% end %>

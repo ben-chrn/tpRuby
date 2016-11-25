@@ -1,2 +1,5 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<% if @post %>
+	<h1>Post by <%= @post.user.name %></h1>
+
+	<p><%= @post.message %></p>
+<% end %>
